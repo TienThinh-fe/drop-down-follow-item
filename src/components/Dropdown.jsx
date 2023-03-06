@@ -1,6 +1,7 @@
-import styled from "styled-components"
+import { useEffect } from "react";
+import styled from "styled-components";
 
-import { ReactComponent as ArrowIcon } from "../assets/arrow.svg"
+import { ReactComponent as ArrowIcon } from "../assets/arrow.svg";
 
 const DropdownContainer = styled.div`
   width: 160px;
@@ -8,21 +9,32 @@ const DropdownContainer = styled.div`
   background-color: hsla(0, 0%, 100%, 0.03);
   border-radius: 8px;
   display: flex;
-  align-items: center
+  align-items: center;
   cursor: pointer;
+  position: absolute;
+  z-index: 1;
+
+  svg {
+    position: absolute;
+    right: 8px;
+  }
 `;
 
 const Title = styled.span`
-  margin: 0 16px
-`
+  margin: 0 16px;
+`;
 
-const Dropdown = () => {
-  return <DropdownContainer>
-    <Title>
-      Dropdown
-    </Title>
-    <ArrowIcon />
+const Dropdown = ({ selectedItem, setIsExpanded }) => {
+  useEffect(() => {
+    console.log(selectedItem);
+  }, [selectedItem]);
+
+  return (
+    <DropdownContainer onClick={() => setIsExpanded((prev) => !prev)}>
+      <Title>{selectedItem.title}</Title>
+      <ArrowIcon />
     </DropdownContainer>
-}
+  );
+};
 
-export default Dropdown
+export default Dropdown;
