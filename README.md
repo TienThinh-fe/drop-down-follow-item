@@ -19,6 +19,8 @@ Inspiration from dropdown panel of spline.design
 
 - Clone to your machine:
   `git clone https://github.com/TienThinh-fe/drop-down-follow-item.git`
+  
+- Access to project folder: `cd drop-down-follow-item`
 
 - Install packages: `npm i`
 
