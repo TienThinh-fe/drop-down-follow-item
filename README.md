@@ -12,6 +12,9 @@ Inspiration from dropdown panel of spline.design
 - styled-components
 - Custom hook
 
+## To improve:
+- Make a Menu like a Popover
+
 ## To test in your local
 
 - Clone to your machine:
